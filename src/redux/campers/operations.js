@@ -1,28 +1,25 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
-axios.defaults.baseURL = 'https://66b1f8e71ca8ad33d4f5f63e.mockapi.io';
-
-export const getCampers = createAsyncThunk(
-  'campers/getAll',
-  async (_, { rejectWithValue }) => {
+export const fetchCampers = createAsyncThunk(
+  "campers/fetchCampers",
+  async (_, thunkAPI) => {
     try {
-      const { data } = await axios.get('/campers');
-      return data;
-    } catch (e) {
-      return rejectWithValue(e.message);
+      const response = await axios.get(
+        `https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers`
+      );
+
+      return response.data.items;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
     }
   }
 );
 
-export const getCamperById = createAsyncThunk(
-  'campers/getCamperById',
-  async (camperId, { rejectWithValue }) => {
-    try {
-      const { data } = await axios.get(`/campers/${camperId}`);
-      return data;
-    } catch (e) {
-      return rejectWithValue(e.message);
-    }
-  }
-);
+export const fetchCamperDetailsById = async (camperId) => {
+  const response = await axios.get(
+    `https://66b1f8e71ca8ad33d4f5f63e.mockapi.io/campers/${camperId}`
+  );
+
+  return response;
+};

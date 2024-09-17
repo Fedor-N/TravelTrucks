@@ -1,56 +1,49 @@
-.main {
-  display: flex;
-  align-items: center;
-  color: var(--inputs);
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-    url(@assets/hero/hero.jpg);
-  background-size: cover;
+.homeContainer {
+  padding-top: 264px;
+  padding-left: 64px;
+  background-image: url("../../../public/PictureHome.png");
   background-repeat: no-repeat;
-  background-position: center;
-}
+  background-size: cover;
+  width: 1440px;
+  height: 696px;
+  box-sizing: border-box;
 
-@media (min-resolution: 192dpi) or (min-resolution: 2dppx) {
-  .main {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-      url(@assets/hero/hero@2x.jpg);
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url("../../../public/PictureHome@2x.png");
+    background-size: 1440px 696px;
   }
 }
 
-@media (min-resolution: 288dpi) or (min-resolution: 3dppx) {
-  .main {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-      url(@assets/hero/hero@3x.jpg);
-  }
-}
-
-.title {
-  font-size: 36px;
+.homeBigTitle {
+  font-family: var(--font-family);
   font-weight: 600;
+  font-size: 48px;
+  line-height: 67%;
+  color: var(--inputs);
+  margin-bottom: 16px;
 }
 
-@media screen and (min-width: 768px) {
-  .title {
-    font-size: 48px;
-    line-height: 0.66667;
-  }
-}
-
-.text {
+.homeSmallTitle {
+  font-family: var(--font-family);
   font-weight: 600;
-  font-size: var(--font-small);
-  line-height: 1.33333;
-  margin-top: 16px;
+  font-size: 24px;
+  line-height: 133%;
+  color: var(--inputs);
   margin-bottom: 40px;
 }
 
-@media screen and (min-width: 768px) {
-  .text {
-    font-size: var(--font-large);
-  }
-}
-
-.link {
-  display: block;
-  width: 100%;
-  padding: 16px 0;
+.homeBtn {
+  border: none;
+  border-radius: 200px;
+  padding: 16px 48.5px;
+  width: 173px;
+  background: var(--button);
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--white);
 }

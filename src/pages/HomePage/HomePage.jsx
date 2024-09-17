@@ -1,31 +1,20 @@
-import { Link } from 'react-router-dom';
-
-import DocumentTitle from '@components/DocumentTitle';
-import Container from '@components/Container/Container';
-import Button from '@components/Button/Button';
-
-import css from './HomePage.module.css';
+import { Link, useLocation } from "react-router-dom";
+import Loader from "../../components/Loader/Loader";
+import css from "./HomePage.module.css";
 
 const HomePage = () => {
+  const location = useLocation();
+
   return (
-    <>
-      <DocumentTitle title="Travel Trucks" />
-
-      <main className={css.main}>
-        <Container>
-          <h1 className={css.title}>Campers of your dreams</h1>
-          <p className={css.text}>
-            You can find everything you want in our catalog
-          </p>
-
-          <Button main aria-label="View now">
-            <Link to="/catalog" className={css.link}>
-              View Now
-            </Link>
-          </Button>
-        </Container>
-      </main>
-    </>
+    <div className={css.homeContainer}>
+      <h1 className={css.homeBigTitle}>Campers of your dreams</h1>
+      <h2 className={css.homeSmallTitle}>
+        You can find everything you want in our catalog
+      </h2>
+      <Link to={`/catalog`} state={{ from: location }}>
+        <button className={css.homeBtn}>View now</button>
+      </Link>
+    </div>
   );
 };
 

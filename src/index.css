@@ -1,27 +1,31 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
-@import '@styles/variables.css';
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
-html {
+:root {
+  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 18px; */
+  --main: #101828;
+  --text: #475467;
+  --white: #fff;
+  --inputs: #f7f7f7;
+  --badges: #f2f4f7;
+  --gray: #6c717b;
+  --gray-light: #dadde1;
+  --button: #e44848;
+  --button-hover: #d84343;
+  --rating: #ffc531;
+  max-width: 1440px;
+  margin: 0 auto;
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  box-sizing: border-box;
   margin: 0;
-  font-family: Inter, sans-serif;
-  background: var(--white);
-  font-size: var(--font-small);
-  font-style: normal;
-}
-
-#root {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex-grow: 1;
 }
 
 h1,
@@ -30,34 +34,35 @@ h3,
 h4,
 h5,
 h6,
-p,
-hr {
+p {
   margin: 0;
 }
 
-ul,
-ol {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
+p:last-child {
+  margin-bottom: 0;
 }
 
-button {
+ul {
+  margin: 0;
   padding: 0;
-  border: none;
-  font: inherit;
-  color: inherit;
-  background-color: transparent;
-  cursor: pointer;
+  list-style-type: none;
 }
 
 a {
+  color: currentColor;
   text-decoration: none;
-  color: inherit;
+}
+
+button {
+  cursor: pointer;
 }
 
 img {
   display: block;
   max-width: 100%;
-  height: auto;
+}
+
+input {
+  padding: 0;
+  border: none;
 }
